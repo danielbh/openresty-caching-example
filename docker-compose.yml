@@ -6,6 +6,6 @@ services:
         ports:
             - 8080:80
         restart: always
-    nodeapp:
-        image: nodeapp:latest
+    goapp:
+        image: goapp:latest
         restart: always
