@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+    nginx:
+        image: reverseproxy:latest
+        ports:
+            - 8080:80
+        restart: always
+    nodeapp:
+        image: nodeapp:latest
+        restart: always
