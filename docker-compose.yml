@@ -3,6 +3,8 @@ version: '3.7'
 services:
     nginx:
         image: reverseproxy:latest
+        volumes:
+          - ./nginx/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
         ports:
             - 8080:80
         restart: always
