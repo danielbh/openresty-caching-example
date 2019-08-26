@@ -37,23 +37,6 @@ func main() {
 		returnFailure = !returnFailure
 	})
 
-	http.HandleFunc("/deployment-info", func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusOK)
-		fmt.Fprintf(w, fakeVersion)
-	})
-
-	http.HandleFunc("/script.fingerprint.js", func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("version", fakeVersion)
-		w.WriteHeader(http.StatusOK)
-		fmt.Fprintf(w, "fake js with new version: "+fakeVersion)
-	})
-
-	http.HandleFunc("/stylesheet.fingerprint.css", func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("version", fakeVersion)
-		w.WriteHeader(http.StatusOK)
-		fmt.Fprintf(w, "fake css with new version: "+fakeVersion)
-	})
-
 	http.ListenAndServe(":8000", nil)
 }
 
